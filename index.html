@@ -1,0 +1,101 @@
+<!doctype html>
+  <html>
+   
+<head>
+     
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+     
+      <style>
+    /* Image Designing Propoerties */
+    .thumb {
+        height: 250px;
+        width: 200px;
+        border: 1px solid #000;
+    }
+          .main {
+              display: flex;
+              justify-content: space-around;
+              margin-top: 50px;
+          }
+          .inputbutton {
+            margin: 50px 0px 0px 65px;
+          }
+          .img1 {
+              background-image: url(sharukh.jpg);
+              background-repeat: no-repeat;
+              background-position: center;
+              background-size: cover;
+          }
+          .kkr {
+              position: relative;
+          }
+          .img2 {
+              width: 80%;
+              position: absolute;
+              top: 75%;
+              left: 48%;
+              transform: translate(-50%,-50%);
+          }
+          .img3 {
+              background-image: url(sharukh.jpg);
+              background-repeat: no-repeat;
+              background-size: cover;
+              background-position: center;
+              position: relative;
+          }
+          .kkr1 {
+               width: 80%;
+              position: absolute;
+              top: 75%;
+              left: 48%;
+              transform: translate(-50%,-50%);
+          }
+          .plus, .Equal {
+              display: flex;
+              align-items: center;
+              color: #3da713;
+          }
+</style>
+      </head>
+
+
+<body>
+<div class="main">
+<div class="thumb img1"></div>
+<div class="plus"><i class="fas fa-3x fa-plus"></i></div>
+<div class="thumb kkr">
+    <img src="KKR.gif" class="img2">
+</div>
+<div class="Equal"><i class="fas fa-3x fa-equals"></i></div>
+<div class="thumb img3">
+<img src="" height="200" id="imgupload">
+   <img class="kkr1" src="KKR.gif">
+    </div>
+    </div>
+    <input type="file" onchange="previewFile()" class="inputbutton">
+    
+    
+    
+<script>
+   function previewFile(){
+       var preview = document.getElementById('imgupload'); //selects the query named img
+       var file    = document.querySelector('input[type=file]').files[0]; //sames as here
+       var reader  = new FileReader();
+
+       reader.onloadend = function () {
+           preview.src = reader.result;
+       }
+
+       if (file) {
+           reader.readAsDataURL(file); //reads the data as a URL
+       } else {
+           preview.src = "";
+       }
+  }
+
+  previewFile();  //calls the function named previewFile()
+  </script>
+
+      </body>
+</html>
+
